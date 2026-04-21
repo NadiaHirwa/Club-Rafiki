@@ -1,62 +1,45 @@
 import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
+import NewsArticlePage from './NewsArticlePage'
 import { newsItems, progressReports, rafikiBooksJournals, strategicPlan } from '../data/mediaData'
+import { newsArticles } from '../data/newsArticles'
 
+// ── Icon components (kept exactly as you had them) ────────────────────────────
 function SectionIcon({ id }) {
-  if (id === 'reports') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
-        <line x1="6" y1="20" x2="6" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="6" />
-        <line x1="18" y1="20" x2="18" y2="13" />
-      </svg>
-    )
-  }
-  if (id === 'books') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
-        <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
-        <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
-      </svg>
-    )
-  }
-  if (id === 'journals') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <line x1="7" y1="8" x2="17" y2="8" />
-        <line x1="7" y1="12" x2="17" y2="12" />
-      </svg>
-    )
-  }
-  if (id === 'strategic') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="12" cy="12" r="1" className="fill-current" />
-      </svg>
-    )
-  }
+  if (id === 'reports') return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <line x1="6" y1="20" x2="6" y2="10" /><line x1="12" y1="20" x2="12" y2="6" /><line x1="18" y1="20" x2="18" y2="13" />
+    </svg>
+  )
+  if (id === 'books') return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+      <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
+    </svg>
+  )
+  if (id === 'journals') return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="16" rx="2" /><line x1="7" y1="8" x2="17" y2="8" /><line x1="7" y1="12" x2="17" y2="12" />
+    </svg>
+  )
+  if (id === 'strategic') return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="1" className="fill-current" />
+    </svg>
+  )
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9 12h6" />
-      <path d="M12 9v6" />
+      <circle cx="12" cy="12" r="9" /><path d="M9 12h6" /><path d="M12 9v6" />
     </svg>
   )
 }
 
 function MainTabIcon({ id }) {
-  if (id === 'news') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="16" rx="2" />
-        <line x1="7" y1="8" x2="17" y2="8" />
-        <line x1="7" y1="12" x2="17" y2="12" />
-      </svg>
-    )
-  }
+  if (id === 'news') return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="16" rx="2" /><line x1="7" y1="8" x2="17" y2="8" /><line x1="7" y1="12" x2="17" y2="12" />
+    </svg>
+  )
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -66,36 +49,23 @@ function MainTabIcon({ id }) {
 }
 
 function ResourceIcon({ type }) {
-  if (type === 'book-open') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
-        <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
-        <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
-      </svg>
-    )
-  }
-  if (type === 'library') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
-        <path d="M3 10h18" />
-        <path d="M4 10v8" />
-        <path d="M9 10v8" />
-        <path d="M15 10v8" />
-        <path d="M20 10v8" />
-        <path d="M2 18h20" />
-        <path d="M12 3l10 5H2z" />
-      </svg>
-    )
-  }
-  if (type === 'monitor') {
-    return (
-      <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
-        <rect x="3" y="4" width="18" height="12" rx="2" />
-        <path d="M8 20h8" />
-        <path d="M12 16v4" />
-      </svg>
-    )
-  }
+  if (type === 'book-open') return (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+      <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+      <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
+    </svg>
+  )
+  if (type === 'library') return (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+      <path d="M3 10h18" /><path d="M4 10v8" /><path d="M9 10v8" /><path d="M15 10v8" /><path d="M20 10v8" />
+      <path d="M2 18h20" /><path d="M12 3l10 5H2z" />
+    </svg>
+  )
+  if (type === 'monitor') return (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8" /><path d="M12 16v4" />
+    </svg>
+  )
   return (
     <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
       <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
@@ -120,12 +90,8 @@ function PubCard({ img, title, desc, year, url, wide = false }) {
         <h4 className="font-display text-base text-dark leading-snug mb-2 flex-1">{title}</h4>
         {desc && <p className="text-muted text-xs leading-relaxed mb-3">{desc}</p>}
         {url && url !== '#' && (
-          <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-orange font-bold text-xs hover:underline mt-auto"
-          >
+          <a href={url} target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-orange font-bold text-xs hover:underline mt-auto">
             <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-orange fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
               <polyline points="14 2 14 8 20 8"/>
@@ -139,39 +105,42 @@ function PubCard({ img, title, desc, year, url, wide = false }) {
 }
 
 // ── News Tab ──────────────────────────────────────────────────────────────────
-function NewsTab() {
+function NewsTab({ onReadArticle }) {
+  const tagColors = {
+    'Latest News':  'bg-orange-light text-orange',
+    'Empowerment':  'bg-purple-100 text-purple-700',
+    'Health':       'bg-red-100 text-red-700',
+  }
+
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {newsItems.map((item, i) => (
-        <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-all group">
+        <div key={i}
+          className="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-all group cursor-pointer"
+          onClick={() => onReadArticle(item.articleId)}
+        >
           <div className="overflow-hidden h-48">
-            <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src={item.img} alt={item.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="p-6">
             <div className="flex items-center justify-between mb-3">
-              <span className="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-orange-light text-orange">{item.tag}</span>
+              <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full ${tagColors[item.tag] || 'bg-orange-light text-orange'}`}>
+                {item.tag}
+              </span>
               <span className="text-muted text-xs">{item.date}</span>
             </div>
             <h3 className="font-display text-lg text-dark leading-snug mb-2">{item.title}</h3>
             <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
-            {item.url && item.url !== '#' ? (
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 mt-4 text-orange font-bold text-sm hover:underline"
-              >
-                Read Full Article
-                <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-orange fill-none stroke-[2.5] [stroke-linecap:round] [stroke-linejoin:round]">
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </a>
-            ) : (
-              <p className="mt-4 text-muted/50 text-xs italic flex items-center gap-1">
-                <svg viewBox="0 0 24 24" className="w-3 h-3 stroke-current fill-none stroke-2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                {item.read}
-              </p>
-            )}
+            <button
+              onClick={(e) => { e.stopPropagation(); onReadArticle(item.articleId) }}
+              className="inline-flex items-center gap-1.5 mt-4 text-orange font-bold text-sm hover:underline bg-transparent border-0 cursor-pointer p-0"
+            >
+              Read Full Article
+              <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-orange fill-none stroke-[2.5] [stroke-linecap:round] [stroke-linejoin:round]">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
           </div>
         </div>
       ))}
@@ -184,27 +153,21 @@ function PublicationsTab() {
   const [section, setSection] = useState('reports')
 
   const sections = [
-    { id: 'reports', label: 'Progress Reports' },
-    { id: 'books', label: 'RAFIKI Books' },
-    { id: 'journals', label: 'RAFIKI Journals' },
+    { id: 'reports',   label: 'Progress Reports' },
+    { id: 'books',     label: 'RAFIKI Books' },
+    { id: 'journals',  label: 'RAFIKI Journals' },
     { id: 'strategic', label: 'Strategic Plan' },
-    { id: 'ebooks', label: 'E-Books & Links' },
+    { id: 'ebooks',    label: 'E-Books & Links' },
   ]
 
   return (
     <div>
-      {/* Sub-tabs */}
       <div className="flex flex-wrap gap-2 mb-10">
         {sections.map(s => (
-          <button
-            key={s.id}
-            onClick={() => setSection(s.id)}
+          <button key={s.id} onClick={() => setSection(s.id)}
             className={`px-4 py-2 rounded-full text-sm font-semibold border-2 transition-all cursor-pointer ${
-              section === s.id
-                ? 'bg-navy text-white border-navy'
-                : 'bg-white text-muted border-border hover:border-navy hover:text-navy'
-            }`}
-          >
+              section === s.id ? 'bg-navy text-white border-navy' : 'bg-white text-muted border-border hover:border-navy hover:text-navy'
+            }`}>
             <span className="inline-flex items-center gap-1.5">
               <SectionIcon id={s.id} />
               {s.label}
@@ -213,7 +176,6 @@ function PublicationsTab() {
         ))}
       </div>
 
-      {/* Progress Reports */}
       {section === 'reports' && (
         <>
           <div className="mb-6">
@@ -221,14 +183,11 @@ function PublicationsTab() {
             <p className="text-muted text-sm">Annual and semi-annual reports documenting Club Rafiki's work and impact over the years.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {progressReports.map((r, i) => (
-              <PubCard key={i} img={r.img} title={r.title} year={r.year} url={r.url} />
-            ))}
+            {progressReports.map((r, i) => <PubCard key={i} img={r.img} title={r.title} year={r.year} url={r.url} />)}
           </div>
         </>
       )}
 
-      {/* RAFIKI Books */}
       {section === 'books' && (
         <>
           <div className="mb-6">
@@ -236,14 +195,11 @@ function PublicationsTab() {
             <p className="text-muted text-sm">Books written by Club Rafiki youth volunteers — stories, reflections, and creative works.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {rafikiBooksJournals.books.map((b, i) => (
-              <PubCard key={i} img={b.img} title={b.title} desc={b.desc} year={b.year} url={b.url} />
-            ))}
+            {rafikiBooksJournals.books.map((b, i) => <PubCard key={i} img={b.img} title={b.title} desc={b.desc} year={b.year} url={b.url} />)}
           </div>
         </>
       )}
 
-      {/* RAFIKI Journals */}
       {section === 'journals' && (
         <>
           <div className="mb-6">
@@ -252,13 +208,8 @@ function PublicationsTab() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {rafikiBooksJournals.journals.map((j, i) => (
-              <a
-                key={i}
-                href={j.url}
-                target="_blank"
-                rel="noreferrer"
-                className="group bg-white rounded-xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.07)] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.13)] transition-all"
-              >
+              <a key={i} href={j.url} target="_blank" rel="noreferrer"
+                className="group bg-white rounded-xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.07)] hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(0,0,0,0.13)] transition-all">
                 <div className="h-40 overflow-hidden bg-cream">
                   <img src={j.img} alt={j.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -277,7 +228,6 @@ function PublicationsTab() {
         </>
       )}
 
-      {/* Strategic Plan */}
       {section === 'strategic' && (
         <>
           <div className="mb-8">
@@ -295,12 +245,8 @@ function PublicationsTab() {
                   <h4 className="font-display text-2xl text-dark mb-3">{strategicPlan.title}</h4>
                   <p className="text-muted text-sm leading-relaxed">{strategicPlan.desc}</p>
                 </div>
-                <a
-                  href={strategicPlan.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 bg-navy text-white rounded-xl px-5 py-3 text-sm font-bold hover:bg-[#122d55] transition-colors w-fit"
-                >
+                <a href={strategicPlan.url} target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 mt-6 bg-navy text-white rounded-xl px-5 py-3 text-sm font-bold hover:bg-[#122d55] transition-colors w-fit">
                   <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-white fill-none stroke-2 [stroke-linecap:round]">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
                   </svg>
@@ -312,7 +258,6 @@ function PublicationsTab() {
         </>
       )}
 
-      {/* E-Books & External Links */}
       {section === 'ebooks' && (
         <>
           <div className="mb-8">
@@ -321,13 +266,8 @@ function PublicationsTab() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {rafikiBooksJournals.ebooks.map((e, i) => (
-              <a
-                key={i}
-                href={e.url}
-                target="_blank"
-                rel="noreferrer"
-                className="bg-white rounded-2xl p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] transition-all flex items-start gap-3 group"
-              >
+              <a key={i} href={e.url} target="_blank" rel="noreferrer"
+                className="bg-white rounded-2xl p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] transition-all flex items-start gap-3 group">
                 <span className="text-orange flex-shrink-0"><ResourceIcon type={e.icon} /></span>
                 <div>
                   <p className="text-sm font-bold text-dark leading-snug group-hover:text-orange transition-colors">{e.title}</p>
@@ -349,7 +289,26 @@ function PublicationsTab() {
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
 export default function MediaPage() {
-  const [activeTab, setActiveTab] = useState('news')
+  const [activeTab, setActiveTab]     = useState('news')
+  const [activeArticle, setActiveArticle] = useState(null)
+
+  const handleReadArticle = (articleId) => {
+    const found = newsArticles.find(a => a.id === articleId)
+    if (found) {
+      setActiveArticle(found)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handleBack = () => {
+    setActiveArticle(null)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Show article detail
+  if (activeArticle) {
+    return <NewsArticlePage article={activeArticle} onBack={handleBack} />
+  }
 
   return (
     <>
@@ -358,21 +317,17 @@ export default function MediaPage() {
       <section className="py-16 bg-cream min-h-screen">
         <div className="max-w-[1200px] mx-auto px-6">
 
-          {/* Main Tab Switch */}
           <div className="flex gap-3 mb-12 bg-white rounded-2xl p-2 shadow-[0_2px_12px_rgba(0,0,0,0.06)] w-fit mx-auto">
             {[
               { id: 'news', label: 'News & Events' },
               { id: 'publications', label: 'Publications' },
             ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
                 className={`px-7 py-3 rounded-xl text-sm font-bold transition-all cursor-pointer border-0 ${
                   activeTab === tab.id
                     ? 'bg-navy text-white shadow-[0_4px_14px_rgba(26,58,107,0.3)]'
                     : 'bg-transparent text-muted hover:text-navy'
-                }`}
-              >
+                }`}>
                 <span className="inline-flex items-center gap-1.5">
                   <MainTabIcon id={tab.id} />
                   {tab.label}
@@ -381,7 +336,7 @@ export default function MediaPage() {
             ))}
           </div>
 
-          {activeTab === 'news' && <NewsTab />}
+          {activeTab === 'news' && <NewsTab onReadArticle={handleReadArticle} />}
           {activeTab === 'publications' && <PublicationsTab />}
 
         </div>
