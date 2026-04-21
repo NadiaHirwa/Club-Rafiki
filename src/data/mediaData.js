@@ -1,0 +1,121 @@
+// ─── NEWS & EVENTS ───────────────────────────────────────────────────────────
+export const newsItems = [
+  {
+    img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2025/10/SnapInsta.to_563104732_18375687874145859_6516023025399517018_n.jpg?resize=1080%2C719&ssl=1',
+    tag: 'Latest News',
+    title: 'Ecobank Rwanda Donates Computers to Empower Youth at Club Rafiki',
+    desc: 'Ecobank Rwanda strengthened its community impact by donating computers to Club Rafiki, directly boosting digital literacy opportunities for youth in Nyamirambo.',
+    date: 'October 11, 2025',
+    read: '3 min read',
+    url: 'https://clubrafiki.com/ecobank-rwanda-supports-youth-centres/',
+  },
+  {
+    img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2025/11/SnapInsta.to_534835635_18059071919457853_7641123639261403111_n.jpg?resize=1080%2C720&ssl=1',
+    tag: 'Latest News',
+    title: 'EDU-FUN FIESTA: Where Learning Meets Fun at Club Rafiki!',
+    desc: 'An exciting educational festival brought together children and youth for a day of interactive learning, games, and creative activities at Club Rafiki.',
+    date: 'August 15, 2025',
+    read: '4 min read',
+    url: 'https://clubrafiki.com/edu-fun-fiesta-where-learning-meets-fun-at-club-rafiki/',
+  },
+  {
+    img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2025/10/54697022511_d738c63433_c.jpg?resize=675%2C800&ssl=1',
+    tag: 'Latest News',
+    title: 'President Kagame at Club Rafiki for Giants of Africa Basketball Camp',
+    desc: 'President Paul Kagame visited Club Rafiki during the Giants of Africa Basketball Camp, inspiring hundreds of youth and celebrating the power of sport for development.',
+    date: 'August 3, 2025',
+    read: '5 min read',
+    url: 'https://clubrafiki.com/president-kagame-visits-giants-of-africa-camp-at-club-rafiki/',
+  },
+  {
+    img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2025/10/54684050769_f3172ccf5c_c.jpg?resize=799%2C533&ssl=1',
+    tag: 'Latest News',
+    title: 'Young People Showcase Their Talents at Club Rafiki with RBA_Iwacu',
+    desc: 'In partnership with RBA_Iwacu, Club Rafiki hosted a talent showcase where young people demonstrated skills in dance, music, art, and sports to a packed audience.',
+    date: 'July 23, 2025',
+    read: '4 min read',
+    url: 'https://clubrafiki.com/young-people-showcase-their-talents-at-club-rafiki-with-rba_iwacu/',
+  },
+  {
+    img: 'https://i.ibb.co/HpYNKtq4/Semester-report-2024-photo.png',
+    tag: 'Empowerment',
+    title: 'Girl Up Leadership Circle — 2024 Semester Report',
+    desc: 'Our girls empowerment program graduated 45 young women from leadership and vocational training, marking another successful year for the Girl Up initiative.',
+    date: 'January 2025',
+    read: '5 min read',
+    url: '#',
+  },
+  {
+    img: 'https://i.ibb.co/ccb1JwML/Health-pictures.png',
+    tag: 'Health',
+    title: 'Mobile VCT Campaign Reaches 1,200 in Nyamirambo',
+    desc: 'Our health outreach team conducted a major voluntary HIV testing campaign across 6 neighborhoods, making life-saving services accessible to the community.',
+    date: 'December 2024',
+    read: '3 min read',
+    url: '#',
+  },
+]
+
+// ─── PUBLICATIONS ─────────────────────────────────────────────────────────────
+
+export const progressReports = [
+  { title: 'Annual Report 2023–2024', year: '2024', img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2024/07/2024-report-photo.png?resize=657%2C479&ssl=1', url: 'https://clubrafiki.com/wp-content/uploads/2024/07/Rafiki-2024-FINAL-2_compressed-1.pdf' },
+  { title: 'Annual Report 2022–2023', year: '2023', img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2023/08/Report-2022-2023-2.png?resize=1480%2C1184&ssl=1', url: 'https://clubrafiki.com/wp-content/uploads/2023/08/Club-Rafiki-Annual-report-2022_23-thanks-1.pdf' },
+  { title: 'Annual Report 2021–2022', year: '2022', img: 'https://clubrafiki.files.wordpress.com/2022/05/282380379_545397163879467_1403634666664940362_n.jpg', url: 'https://clubrafiki.files.wordpress.com/2022/08/new-report-big_compressed.pdf' },
+  { title: 'Annual Report 2020–2021', year: '2021', img: 'https://clubrafiki.files.wordpress.com/2021/07/annually-report-2020-2021-pic.png', url: 'https://clubrafiki.files.wordpress.com/2021/08/final-rafiki-report-f-1.pdf' },
+  { title: 'Semi-Annual Report July–Dec 2020', year: '2020', img: 'https://clubrafiki.files.wordpress.com/2021/01/quarterly-report-oct-to-dec-2020.png', url: 'https://clubrafiki.files.wordpress.com/2021/02/narrative-report-semester-2_2020.pdf' },
+  { title: 'Youth Opinions on COVID-19 in Rwanda', year: '2020', img: 'https://clubrafiki.files.wordpress.com/2020/12/report-cover.jpg', url: 'https://clubrafiki.files.wordpress.com/2020/12/club-rafiki_covid19_-report.pdf' },
+  { title: 'Annual Report 2019–2020', year: '2020', img: 'https://clubrafiki.files.wordpress.com/2021/01/annual-report-2019_20-2.png', url: 'https://clubrafiki.files.wordpress.com/2020/08/club-rafiki-report-2019-2020-22-final_compressed.pdf' },
+  { title: 'Semi-Annual Report July–Dec 2018', year: '2018', img: 'https://clubrafiki.files.wordpress.com/2021/01/semester-two_2018.png', url: 'https://clubrafiki.files.wordpress.com/2019/03/narrative-report_indigo-foundation-semester-two-2018-.pdf' },
+  { title: 'Annual Report 2017–2018', year: '2018', img: 'https://clubrafiki.files.wordpress.com/2021/01/annual-report-2017_18.png', url: 'https://clubrafiki.files.wordpress.com/2018/08/club-rafiki_annual-report-2017_18.pdf' },
+  { title: 'Annual Report 2016–2017', year: '2017', img: 'https://clubrafiki.files.wordpress.com/2021/01/annual-report-2016_17.png', url: 'https://clubrafiki.files.wordpress.com/2017/11/club-rafiki_annual-report-2016_171.pdf' },
+  { title: 'Annual Report 2014–2015', year: '2015', img: 'https://clubrafiki.files.wordpress.com/2021/01/annual-report-2014-2015.png', url: 'https://clubrafiki.files.wordpress.com/2014/09/annual-report-mtmh-final.pdf' },
+  { title: 'Evaluation Report', year: '2018', img: 'https://clubrafiki.files.wordpress.com/2018/10/report2018-fn-01.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/08/evaluation-report-rafikicr-report-edited-by-prisca-and-tony.pdf' },
+]
+
+export const rafikiBooksJournals = {
+  books: [
+    { title: 'Winyangiriza Ejo', img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2025/06/Winyangiriza-Ejo-1_page-0001.jpg?resize=1241%2C1754&ssl=1', desc: 'A story about family, abuse, and the consequences of harmful behavior in the community.', url: 'https://clubrafiki.com/wp-content/uploads/2025/06/Winyangiriza-Ejo-1.pdf', year: '2025' },
+    { title: 'COVID-19 Legacy', img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2024/01/Rafiki_pages-to-jpg-0001.jpg?resize=1241%2C1477&ssl=1', desc: 'Youth reflections on life, resilience, and community during and after the pandemic.', url: 'https://clubrafiki.com/wp-content/uploads/2024/01/Rafiki-Book-Covid19-Legacy.pdf', year: '2024' },
+    { title: 'Our Life in Our Family', img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2023/12/Book-cover.jpg?resize=1292%2C863&ssl=1', desc: 'Stories from Club Rafiki youth about family life, values, and growing up.', url: 'https://clubrafiki.com/wp-content/uploads/2023/12/Rafiki-booklet-v3.pdf', year: '2023' },
+    { title: 'Shining Dreams', img: 'https://clubrafiki.files.wordpress.com/2021/03/shinning-dreams.jpg', desc: 'An inspiring collection of stories and dreams written by youth in the English Corner program.', url: 'https://clubrafiki.files.wordpress.com/2020/01/ecw-book-2-final.pdf', year: '2020' },
+    { title: 'COVID-19 Outbreak', img: 'https://clubrafiki.files.wordpress.com/2021/03/covid-19-outbreak.jpg', desc: 'Youth perspectives and experiences during the COVID-19 outbreak in Rwanda.', url: 'https://clubrafiki.files.wordpress.com/2020/10/booklet-outbreak.pdf', year: '2020' },
+    { title: 'Rise of Hope', img: 'https://clubrafiki.files.wordpress.com/2021/03/rise-of-hope.jpg', desc: 'The debut book written by English Corner students — a testament to their growth in literacy.', url: 'https://clubrafiki.files.wordpress.com/2019/03/ecw-book.pdf', year: '2019' },
+    { title: 'Jambo Sadness', img: 'https://clubrafiki.files.wordpress.com/2021/03/jambos-sadness.jpg', desc: 'A story exploring emotions, challenges, and the hope found in community support.', url: 'https://clubrafiki.files.wordpress.com/2020/02/jambo-march-2019.pdf', year: '2019' },
+  ],
+  journals: [
+    { title: 'Rafiki Journal Special', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-special.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-special.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 40', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-40.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-40.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 37', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-37.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-37.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 36', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-36.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-36-final.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 35', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-35.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-35.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 34', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-34.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-34.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 33', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-33.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-33.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 31', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-31.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-31.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 30', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-30.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-no-30.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 29', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-29.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-no29.pdf', year: '2018' },
+    { title: 'Rafiki Journal No. 01', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-28.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/rafiki-journal-no-11.pdf', year: '2018' },
+    { title: 'Inshuti No. 27', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-27.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/inshuti_no_27.pdf', year: '2018' },
+    { title: 'Inshuti No. 26', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-26.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/inshuti-numero-26.pdf', year: '2018' },
+    { title: 'Inshuti No. 25', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-25.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/inshuti_y_urubyiruko_no_25.pdf', year: '2018' },
+    { title: 'Inshuti No. 24', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-24.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/inshuti_n_24.pdf', year: '2018' },
+  ],
+  ebooks: [
+    { title: 'REB Pre-Primary School Books', url: 'https://reb.rw/main-menu/resources/pre-primary-school-books/', icon: '📘' },
+    { title: 'REB Primary School Books', url: 'https://reb.rw/main-menu/resources/primary-school-books/', icon: '📗' },
+    { title: 'REB Secondary School Books', url: 'https://reb.rw/main-menu/resources/secondary-school-books/', icon: '📙' },
+    { title: 'Kigali Public Library (Overdrive)', url: 'https://kplonline.overdrive.com/browse', icon: '🏛️' },
+    { title: 'African Storybook', url: 'https://africanstorybook.org/', icon: '📖' },
+    { title: 'Digital Library', url: 'https://digitallibrary.io/', icon: '💻' },
+    { title: 'Free Children\'s Stories', url: 'https://www.freechildrenstories.com/', icon: '📚' },
+    { title: 'WDA TVET E-Learning (YouTube)', url: 'https://www.youtube.com/channel/UClIF3TNK8Y8OXrODK42nI2Q', icon: '🎓' },
+  ],
+}
+
+export const strategicPlan = {
+  title: 'Club Rafiki Strategy 2025–2030',
+  year: '2025',
+  img: 'https://i0.wp.com/clubrafiki.com/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-11-at-10.52.45.jpeg?resize=2338%2C1732&ssl=1',
+  url: 'https://clubrafiki.com/wp-content/uploads/2025/03/club-Rafiki-strategic-plan-2025-30-Final.pdf',
+  desc: 'Our strategic plan outlines Club Rafiki\'s vision, goals, and priority actions for 2025 to 2030 — guiding our work to empower youth across Nyamirambo and Rwanda.',
+}
