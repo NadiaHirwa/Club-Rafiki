@@ -33,9 +33,9 @@ export default function Footer({ navigate }) {
             </p>
             <div className="flex gap-3">
               {[
-                { href: 'https://www.facebook.com/ClubRafikiNyamirambo/', d: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
+                { href: 'https://www.facebook.com/clubrafikicentre', d: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
                 { href: 'https://www.instagram.com/club_rafiki/', d: null, isInstagram: true },
-                { href: 'https://twitter.com/ClubRafiki', d: 'M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z' },
+                { href: 'https://x.com/yegoclubrafiki', d: 'M18 2h-3a1 1 0 0 0-1 1v2h-2V3a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v20a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-9h2v9a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z M4 3l3.56 8.46L4 20h3l2.44-4.08L13 20h3L9.44 11.54 13 3h-3l-2.44 4.08L7 3H4z' },
               ].map((s, i) => (
                 <a key={i} href={s.href} target="_blank" rel="noreferrer"
                   className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-orange transition-colors">
@@ -82,8 +82,8 @@ export default function Footer({ navigate }) {
               <li>
                 <button onClick={openPartner} className="text-white/55 hover:text-orange text-sm transition-colors bg-transparent border-0 cursor-pointer p-0">Partner With Us</button>
               </li>
-              <li><a href="https://www.flickr.com/photos/101217036@N07/albums" target="_blank" rel="noreferrer" className="text-white/55 hover:text-orange text-sm transition-colors">Flickr Channel</a></li>
-              <li><a href="https://www.youtube.com/channel/UC-cGA35029h5G32s2aV2Y3g" target="_blank" rel="noreferrer" className="text-white/55 hover:text-orange text-sm transition-colors">YouTube Channel</a></li>
+              <li><a href="https://flickr.com/photos/194412004@N05/" target="_blank" rel="noreferrer" className="text-white/55 hover:text-orange text-sm transition-colors">Flickr Channel</a></li>
+              <li><a href="https://www.youtube.com/@clubrafiki4198" target="_blank" rel="noreferrer" className="text-white/55 hover:text-orange text-sm transition-colors">YouTube Channel</a></li>
             </ul>
           </div>
 

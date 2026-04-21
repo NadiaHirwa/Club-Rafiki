@@ -153,7 +153,7 @@ export default function ContactPage() {
                 <div className="flex gap-3 flex-wrap">
                   {[
                     { href: 'https://www.facebook.com/clubrafikicentre', label: 'Facebook' },
-                    { href: 'https://www.instagram.com/clubrafikiyouth/', label: 'Instagram' },
+                    { href: 'https://www.instagram.com/clubrafikiyouth?igsh=MWNpM3FjbmZsYml2aA==', label: 'Instagram' },
                     { href: 'https://x.com/yegoclubrafiki', label: 'X / Twitter' },
                     { href: 'https://www.youtube.com/@clubrafiki4198', label: 'YouTube' },
                     { href: 'https://www.linkedin.com/in/club-rafiki-926267341/', label: 'LinkedIn' },
