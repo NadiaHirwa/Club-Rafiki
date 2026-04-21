@@ -9,7 +9,7 @@ export default function Footer({ navigate }) {
 
   const handleSubscribe = () => {
     if (email) {
-      showToast('Thank you for subscribing! 🎉')
+      showToast('Thank you for subscribing!')
       setEmail('')
     }
   }
@@ -103,14 +103,32 @@ export default function Footer({ navigate }) {
                 Go
               </button>
             </div>
-            <p className="text-white/40 text-xs mt-3">📍 KN 2 AV 266, Nyamirambo, Kigali</p>
-            <p className="text-white/40 text-xs mt-1">⏰ Mon–Sat: 09:00 AM – 7:00 PM</p>
+            <p className="text-white/40 text-xs mt-3 flex items-center gap-1.5">
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              KN 2 AV 266, Nyamirambo, Kigali
+            </p>
+            <p className="text-white/40 text-xs mt-1 flex items-center gap-1.5">
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Mon-Sat: 09:00 AM - 7:00 PM
+            </p>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-sm">
           <p>© 2025 Club Rafiki Youth Empowerment Center. All rights reserved.</p>
-          <p>Made with ❤️ for the youth of Rwanda</p>
+          <p className="flex items-center gap-1.5">
+            Made with
+            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current text-orange" aria-hidden="true">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            for the youth of Rwanda
+          </p>
         </div>
       </div>
       {ModalComponent}

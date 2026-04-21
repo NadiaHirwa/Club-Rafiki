@@ -213,7 +213,7 @@ export default function ContactPage() {
             </svg>
           </div>
           <p className="font-bold text-navy">Club Rafiki — Nyamirambo, Kigali</p>
-          <a href="https://maps.google.com/?q=KN+2+AV+266+Nyamirambo+Kigali+Rwanda"
+          <a href="https://maps.app.goo.gl/i6SXKRkupjf9WP8M9"
             target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-1.5 mt-3 text-orange font-semibold text-sm hover:underline">
             Open in Google Maps

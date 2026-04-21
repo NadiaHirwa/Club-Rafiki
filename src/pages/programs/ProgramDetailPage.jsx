@@ -1,5 +1,101 @@
 import { useFormModal } from '../../components/VolunteerPartnerModals'
 
+function ProgramSectionIcon({ title, accentColor }) {
+  const className = 'w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]'
+  const style = { color: accentColor }
+
+  if (/health|reproductive|campaign/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+      </svg>
+    )
+  }
+  if (/vct|hospital|clinic/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <path d="M3 21h18" />
+        <path d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
+        <path d="M10 10h4" />
+        <path d="M12 8v4" />
+        <path d="M9 21v-5h6v5" />
+      </svg>
+    )
+  }
+  if (/sport|team/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18" />
+        <path d="M12 3a9 9 0 0 1 0 18" />
+      </svg>
+    )
+  }
+  if (/martial|fitness/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <path d="M4 6h16l-6 6v6h-4v-6z" />
+        <path d="M10 18l-2 3" />
+        <path d="M14 18l2 3" />
+      </svg>
+    )
+  }
+  if (/library|reading|book/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+        <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
+      </svg>
+    )
+  }
+  if (/ict|digital/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8" />
+        <path d="M12 16v4" />
+      </svg>
+    )
+  }
+  if (/job|entrepreneur|vocational/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+        <path d="M2 13h20" />
+      </svg>
+    )
+  }
+  if (/culture|arts|performing|music|film|media|civic/i.test(title)) {
+    return (
+      <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="M7 4l4 4" />
+        <path d="M13 4l4 4" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" className={className} style={style} aria-hidden="true">
+      <path d="M8 10l3-3a3 3 0 0 1 4 0l1 1" />
+      <path d="M2 11l4-4 6 6-4 4z" />
+      <path d="M22 11l-4-4-6 6 4 4z" />
+    </svg>
+  )
+}
+
+function HandshakeIcon({ accentColor }) {
+  return (
+    <svg viewBox="0 0 24 24" className="w-8 h-8 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" style={{ color: accentColor }} aria-hidden="true">
+      <path d="M8 10l3-3a3 3 0 0 1 4 0l1 1" />
+      <path d="M2 11l4-4 6 6-4 4z" />
+      <path d="M22 11l-4-4-6 6 4 4z" />
+      <path d="M8.5 14.5l2 2" />
+    </svg>
+  )
+}
+
 export default function ProgramDetailPage({ program, navigate }) {
   const { openVolunteer, openPartner, ModalComponent } = useFormModal()
   if (!program) return null
@@ -85,7 +181,9 @@ export default function ProgramDetailPage({ program, navigate }) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {program.sections.map((sec, i) => (
               <div key={i} className="bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-                <div className="text-3xl mb-3">{sec.icon}</div>
+                <div className="mb-3">
+                  <ProgramSectionIcon title={sec.title} accentColor={program.accentColor} />
+                </div>
                 <h3 className="font-display text-lg text-dark mb-4">{sec.title}</h3>
                 <ul className="flex flex-col gap-2.5">
                   {sec.items.map((item, j) => (
@@ -142,7 +240,7 @@ export default function ProgramDetailPage({ program, navigate }) {
             className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6"
             style={{ background: program.accentColor + '20' }}
           >
-            🤝
+            <HandshakeIcon accentColor={program.accentColor} />
           </div>
           <span className="section-eyebrow">Get Involved</span>
           <h2 className="section-title mb-4">Support This Program</h2>

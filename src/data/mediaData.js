@@ -101,14 +101,14 @@ export const rafikiBooksJournals = {
     { title: 'Inshuti No. 24', img: 'https://clubrafiki.files.wordpress.com/2021/03/rafiki-journal-24.jpg', url: 'https://clubrafiki.files.wordpress.com/2018/06/inshuti_n_24.pdf', year: '2018' },
   ],
   ebooks: [
-    { title: 'REB Pre-Primary School Books', url: 'https://reb.rw/main-menu/resources/pre-primary-school-books/', icon: '📘' },
-    { title: 'REB Primary School Books', url: 'https://reb.rw/main-menu/resources/primary-school-books/', icon: '📗' },
-    { title: 'REB Secondary School Books', url: 'https://reb.rw/main-menu/resources/secondary-school-books/', icon: '📙' },
-    { title: 'Kigali Public Library (Overdrive)', url: 'https://kplonline.overdrive.com/browse', icon: '🏛️' },
-    { title: 'African Storybook', url: 'https://africanstorybook.org/', icon: '📖' },
-    { title: 'Digital Library', url: 'https://digitallibrary.io/', icon: '💻' },
-    { title: 'Free Children\'s Stories', url: 'https://www.freechildrenstories.com/', icon: '📚' },
-    { title: 'WDA TVET E-Learning (YouTube)', url: 'https://www.youtube.com/channel/UClIF3TNK8Y8OXrODK42nI2Q', icon: '🎓' },
+    { title: 'REB Pre-Primary School Books', url: 'https://reb.rw/main-menu/resources/pre-primary-school-books/', icon: 'book-open' },
+    { title: 'REB Primary School Books', url: 'https://reb.rw/main-menu/resources/primary-school-books/', icon: 'book-open' },
+    { title: 'REB Secondary School Books', url: 'https://reb.rw/main-menu/resources/secondary-school-books/', icon: 'book-open' },
+    { title: 'Kigali Public Library (Overdrive)', url: 'https://kplonline.overdrive.com/browse', icon: 'library' },
+    { title: 'African Storybook', url: 'https://africanstorybook.org/', icon: 'book-open' },
+    { title: 'Digital Library', url: 'https://digitallibrary.io/', icon: 'monitor' },
+    { title: 'Free Children\'s Stories', url: 'https://www.freechildrenstories.com/', icon: 'book-open' },
+    { title: 'WDA TVET E-Learning (YouTube)', url: 'https://www.youtube.com/channel/UClIF3TNK8Y8OXrODK42nI2Q', icon: 'book-open' },
   ],
 }
 
