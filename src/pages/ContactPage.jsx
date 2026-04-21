@@ -102,7 +102,7 @@ export default function ContactPage() {
           <div className="text-4xl mb-3">📍</div>
           <p className="font-bold text-navy">Club Rafiki — Nyamirambo, Kigali</p>
           <a
-            href="https://maps.google.com/?q=Nyamirambo+Kigali+Rwanda"
+            href="https://maps.app.goo.gl/U4KTiGu9pUU9ihBG7"
             target="_blank"
             rel="noreferrer"
             className="inline-block mt-3 text-orange font-semibold text-sm hover:underline"

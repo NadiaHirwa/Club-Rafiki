@@ -1,3 +1,51 @@
+// ─── CERTIFICATES & AWARDS ───────────────────────────────────────────────────
+// To add a new certificate: copy one object, change the fields, add your image URL.
+// When Decap CMS is set up, this will be editable from the admin panel.
+export const certificates = [
+  {
+    img: 'https://picsum.photos/600/420?image=10',
+    title: 'Certificate of Registration',
+    issuer: 'Rwanda Governance Board (RGB)',
+    year: '2011',
+    description: 'Official registration as a Community-Based Organization by the Rwanda Governance Board, recognizing Club Rafiki as a legitimate non-profit serving the youth of Nyarugenge District.',
+  },
+  {
+    img: 'https://picsum.photos/600/420?image=20',
+    title: 'Youth Empowerment Excellence Award',
+    issuer: 'Ministry of Youth & ICT, Rwanda',
+    year: '2019',
+    description: 'Awarded in recognition of outstanding contribution to youth empowerment and skills development across Nyamirambo community over multiple decades.',
+  },
+  {
+    img: 'https://picsum.photos/600/420?image=30',
+    title: 'Community Impact Certificate',
+    issuer: 'City of Kigali',
+    year: '2020',
+    description: 'Recognized by the City of Kigali for sustained community impact through sports, education, and health outreach programs benefiting over 5,000 youth annually.',
+  },
+  {
+    img: 'https://picsum.photos/600/420?image=40',
+    title: 'Giants of Africa Partnership Award',
+    issuer: 'Giants of Africa Foundation',
+    year: '2021',
+    description: 'Honored as a founding partner of the Giants of Africa basketball development program in Rwanda, contributing to youth sports and leadership development.',
+  },
+  {
+    img: 'https://picsum.photos/600/420?image=50',
+    title: 'Girls Empowerment Recognition',
+    issuer: 'UN Women Rwanda',
+    year: '2022',
+    description: 'Certificate of recognition for the Girl Up program\'s impact on girls\' leadership, vocational training, and rights advocacy in Nyamirambo.',
+  },
+  {
+    img: 'https://picsum.photos/600/420?image=60',
+    title: 'Health Outreach Excellence',
+    issuer: 'Rwanda Biomedical Centre',
+    year: '2023',
+    description: 'Awarded for outstanding contribution to HIV prevention and voluntary counseling & testing outreach, reaching over 1,200 individuals across six Nyamirambo neighborhoods.',
+  },
+]
+
 export const stats = [
   { value: '5,000+', label: 'Youth Reached Annually' },
   { value: '50+',    label: 'Years of Service' },

@@ -1,7 +1,79 @@
+import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
-import { partners } from '../data/siteData'
+import { partners, certificates } from '../data/siteData'
+
+function CertLightbox({ cert, onClose }) {
+  return (
+    <div
+      className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[200] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-2xl overflow-hidden max-w-2xl w-full shadow-2xl"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="relative h-64 bg-cream overflow-hidden">
+          <img src={cert.img} alt={cert.title} className="w-full h-full object-cover" />
+          <span className="absolute top-4 left-4 bg-orange text-white text-xs font-bold px-3 py-1.5 rounded-full">
+            {cert.year}
+          </span>
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 text-white text-lg grid place-items-center transition-colors border-0 cursor-pointer"
+          >✕</button>
+        </div>
+        <div className="p-8">
+          <div className="w-12 h-12 rounded-xl bg-orange-light flex items-center justify-center mb-4">
+            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-none stroke-orange stroke-2 [stroke-linecap:round] [stroke-linejoin:round]">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+              <path d="M4 22h16"/>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/>
+            </svg>
+          </div>
+          <h3 className="font-display text-2xl text-dark mb-1">{cert.title}</h3>
+          <p className="text-orange font-semibold text-sm mb-4">{cert.issuer} · {cert.year}</p>
+          <p className="text-muted leading-relaxed">{cert.description}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function CertCard({ cert, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="group bg-white rounded-xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.14)] hover:-translate-y-1 transition-all text-left border-0 cursor-pointer w-full"
+    >
+      <div className="relative h-28 overflow-hidden bg-cream">
+        <img
+          src={cert.img}
+          alt={cert.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+        />
+        <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/30 transition-colors flex items-center justify-center">
+          <svg viewBox="0 0 24 24" className="w-8 h-8 fill-none stroke-white stroke-2 opacity-0 group-hover:opacity-100 transition-opacity [stroke-linecap:round] [stroke-linejoin:round]">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <span className="absolute top-2 left-2 bg-orange text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+          {cert.year}
+        </span>
+      </div>
+      <div className="p-3">
+        <p className="text-xs font-bold text-dark leading-snug line-clamp-2">{cert.title}</p>
+        <p className="text-[11px] text-muted mt-0.5 truncate">{cert.issuer}</p>
+      </div>
+    </button>
+  )
+}
 
 export default function AboutPage() {
+  const [activeCert, setActiveCert] = useState(null)
+
   return (
     <>
       <PageBanner title="About Club Rafiki" subtitle="A community cornerstone for youth empowerment since 1974." />
@@ -73,8 +145,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Partners */}
+      {/* Certificates & Awards */}
       <section className="py-20 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="section-eyebrow">Recognition</span>
+            <h2 className="section-title">Certificates & Awards</h2>
+            <p className="text-muted mt-3 max-w-lg mx-auto">
+              Formal recognition of our commitment to youth empowerment, community development, and organizational excellence.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            {certificates.map((cert, i) => (
+              <CertCard key={i} cert={cert} onClick={() => setActiveCert(cert)} />
+            ))}
+          </div>
+          <p className="text-center text-muted/50 text-xs mt-8 italic">
+            Click any certificate to view details &nbsp;·&nbsp; Replace placeholder content in <code className="bg-cream px-1 rounded">src/data/siteData.js</code>
+          </p>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section className="py-20 bg-cream">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-14">
             <span className="section-eyebrow">Collaboration</span>
@@ -90,6 +183,10 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {activeCert && (
+        <CertLightbox cert={activeCert} onClose={() => setActiveCert(null)} />
+      )}
     </>
   )
 }
