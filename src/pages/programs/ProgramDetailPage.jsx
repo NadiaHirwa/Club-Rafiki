@@ -1,167 +1,7 @@
-const sectionIconMap = {
-  '❤️': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-    </svg>
-  ),
-  '🏥': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M3 21h18" />
-      <path d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
-      <path d="M10 10h4" />
-      <path d="M12 8v4" />
-      <path d="M9 21v-5h6v5" />
-    </svg>
-  ),
-  '📣': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M3 11v2a2 2 0 0 0 2 2h3l5 4V5L8 9H5a2 2 0 0 0-2 2z" />
-      <path d="M16 9a4 4 0 0 1 0 6" />
-      <path d="M19 7a7 7 0 0 1 0 10" />
-    </svg>
-  ),
-  '🏀': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18" />
-      <path d="M12 3a9 9 0 0 1 0 18" />
-      <path d="M12 3a9 9 0 0 0 0 18" />
-    </svg>
-  ),
-  '🥋': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M4 6h16l-6 6v6h-4v-6z" />
-      <path d="M10 18l-2 3" />
-      <path d="M14 18l2 3" />
-    </svg>
-  ),
-  '🤝': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M8 10l3-3a3 3 0 0 1 4 0l1 1" />
-      <path d="M2 11l4-4 6 6-4 4z" />
-      <path d="M22 11l-4-4-6 6 4 4z" />
-      <path d="M8.5 14.5l2 2" />
-      <path d="M11 12l3 3" />
-    </svg>
-  ),
-  '🎭': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M4 5h16v4a8 8 0 0 1-8 8 8 8 0 0 1-8-8z" />
-      <path d="M8 10h.01" />
-      <path d="M16 10h.01" />
-      <path d="M9 13c1 .8 2 .8 3 .8s2 0 3-.8" />
-    </svg>
-  ),
-  '🎵': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M9 18V6l10-2v12" />
-      <circle cx="6" cy="18" r="3" />
-      <circle cx="16" cy="16" r="3" />
-    </svg>
-  ),
-  '✂️': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <circle cx="6" cy="6" r="3" />
-      <circle cx="6" cy="18" r="3" />
-      <path d="M20 4L8.12 15.88" />
-      <path d="M14.47 14.48L20 20" />
-      <path d="M8.12 8.12L12 12" />
-    </svg>
-  ),
-  '🎬': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="M7 4l4 4" />
-      <path d="M13 4l4 4" />
-      <path d="M7 20l4-4" />
-      <path d="M13 20l4-4" />
-    </svg>
-  ),
-  '📚': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-      <path d="M8 6h8" />
-      <path d="M8 10h8" />
-    </svg>
-  ),
-  '🏛️': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M3 10h18" />
-      <path d="M4 10v8" />
-      <path d="M9 10v8" />
-      <path d="M15 10v8" />
-      <path d="M20 10v8" />
-      <path d="M2 18h20" />
-      <path d="M12 3l10 5H2z" />
-    </svg>
-  ),
-  '🎨': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M12 3a9 9 0 1 0 0 18h1a3 3 0 0 0 0-6h-1a3 3 0 0 1 0-6h1a3 3 0 0 0 0-6z" />
-      <circle cx="7.5" cy="10.5" r="1" />
-      <circle cx="9.5" cy="7.5" r="1" />
-      <circle cx="13.5" cy="7.5" r="1" />
-    </svg>
-  ),
-  '📖': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
-      <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3v16a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3z" />
-    </svg>
-  ),
-  '💻': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8" />
-      <path d="M12 16v4" />
-    </svg>
-  ),
-  '💼': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <rect x="2" y="7" width="20" height="14" rx="2" />
-      <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-      <path d="M2 13h20" />
-    </svg>
-  ),
-  '🔧': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-3 3z" />
-    </svg>
-  ),
-  '⭐': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M12 2l2.9 6.2L22 9.3l-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 7.1-1.1z" />
-    </svg>
-  ),
-  '⚽': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7l3 2-1 3h-4L9 9z" />
-      <path d="M7 10l2 5" />
-      <path d="M17 10l-2 5" />
-    </svg>
-  ),
-  '🎓': (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <path d="M2 9l10-5 10 5-10 5z" />
-      <path d="M6 11v4c0 2 3 4 6 4s6-2 6-4v-4" />
-      <path d="M22 9v6" />
-    </svg>
-  ),
-}
-
-function SectionIcon({ icon }) {
-  return sectionIconMap[icon] ?? (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 8v4" />
-      <path d="M12 16h.01" />
-    </svg>
-  )
-}
+import { useFormModal } from '../../components/VolunteerPartnerModals'
 
 export default function ProgramDetailPage({ program, navigate }) {
+  const { openVolunteer, openPartner, ModalComponent } = useFormModal()
   if (!program) return null
 
   return (
@@ -245,9 +85,7 @@ export default function ProgramDetailPage({ program, navigate }) {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {program.sections.map((sec, i) => (
               <div key={i} className="bg-white rounded-2xl p-7 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
-                <div className="mb-3 text-[color:var(--icon-color)]" style={{ '--icon-color': program.accentColor }}>
-                  <SectionIcon icon={sec.icon} />
-                </div>
+                <div className="text-3xl mb-3">{sec.icon}</div>
                 <h3 className="font-display text-lg text-dark mb-4">{sec.title}</h3>
                 <ul className="flex flex-col gap-2.5">
                   {sec.items.map((item, j) => (
@@ -301,10 +139,10 @@ export default function ProgramDetailPage({ program, navigate }) {
       <section className="py-16 bg-cream">
         <div className="max-w-[700px] mx-auto px-6 text-center">
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-[color:var(--icon-color)]"
+            className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6"
             style={{ background: program.accentColor + '20' }}
           >
-            <SectionIcon icon="🤝" />
+            🤝
           </div>
           <span className="section-eyebrow">Get Involved</span>
           <h2 className="section-title mb-4">Support This Program</h2>
@@ -317,12 +155,20 @@ export default function ProgramDetailPage({ program, navigate }) {
             >
               Donate to This Program
             </button>
-            <button
-              onClick={() => navigate('contact')}
-              className="btn-outline !text-ink !border-border hover:!bg-white transition-colors"
-            >
-              Volunteer or Partner
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={openVolunteer}
+                className="btn-outline !text-ink !border-border hover:!bg-white transition-colors"
+              >
+                Volunteer
+              </button>
+              <button
+                onClick={openPartner}
+                className="btn-outline !text-ink !border-border hover:!bg-white transition-colors"
+              >
+                Partner With Us
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -339,6 +185,8 @@ export default function ProgramDetailPage({ program, navigate }) {
           </button>
         </div>
       </section>
+
+      {ModalComponent}
     </>
   )
 }
