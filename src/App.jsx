@@ -6,7 +6,7 @@ import { ToastProvider } from './context/ToastContext'
 import HomePage    from './pages/HomePage'
 import AboutPage   from './pages/AboutPage'
 import ProgramsPage from './pages/ProgramsPage'
-import NewsPage    from './pages/NewsPage'
+import MediaPage   from './pages/MediaPage'
 import ImpactPage  from './pages/ImpactPage'
 import GalleryPage from './pages/GalleryPage'
 import ContactPage from './pages/ContactPage'
@@ -16,7 +16,7 @@ const PAGES = {
   home:     HomePage,
   about:    AboutPage,
   programs: ProgramsPage,
-  news:     NewsPage,
+  media:    MediaPage,
   impact:   ImpactPage,
   gallery:  GalleryPage,
   contact:  ContactPage,
