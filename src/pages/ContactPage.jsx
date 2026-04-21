@@ -2,13 +2,45 @@ import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
 import { useToast } from '../context/ToastContext'
 
+function ContactInfoIcon({ type }) {
+  if (type === 'address') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    )
+  }
+  if (type === 'hours') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    )
+  }
+  if (type === 'email') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <polyline points="22,7 12,13 2,7" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.65 2.62a2 2 0 0 1-.45 2.11L7.9 8.56a16 16 0 0 0 7.54 7.54l1.11-1.48a2 2 0 0 1 2.11-.45c.84.31 1.72.53 2.62.65A2 2 0 0 1 22 16.92z" />
+    </svg>
+  )
+}
+
 export default function ContactPage() {
   const showToast = useToast()
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
 
   const handleSubmit = () => {
     if (form.name && form.email && form.message) {
-      showToast('Message sent! We\'ll get back to you soon. 📩')
+      showToast('Message sent! We\'ll get back to you soon.')
       setForm({ name: '', email: '', subject: '', message: '' })
     } else {
       showToast('Please fill in all required fields.')
@@ -35,13 +67,15 @@ export default function ContactPage() {
 
               <div className="flex flex-col gap-5">
                 {[
-                  { icon: '📍', label: 'Address', value: 'KN 2 AV 266, Nyamirambo, Kigali, Rwanda' },
-                  { icon: '⏰', label: 'Hours', value: 'Monday – Saturday: 09:00 AM – 7:00 PM' },
-                  { icon: '📧', label: 'Email', value: 'info@clubrafiki.org' },
-                  { icon: '📞', label: 'Phone', value: '+250 788 000 000' },
+                  { icon: 'address', label: 'Address', value: 'KN 2 AV 266, Nyamirambo, Kigali, Rwanda' },
+                  { icon: 'hours', label: 'Hours', value: 'Monday - Saturday: 09:00 AM - 7:00 PM' },
+                  { icon: 'email', label: 'Email', value: 'info@clubrafiki.org' },
+                  { icon: 'phone', label: 'Phone', value: '+250 788 000 000' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-orange-light flex items-center justify-center text-xl flex-shrink-0">{item.icon}</div>
+                    <div className="w-12 h-12 rounded-xl bg-orange-light text-orange flex items-center justify-center flex-shrink-0">
+                      <ContactInfoIcon type={item.icon} />
+                    </div>
                     <div>
                       <p className="font-bold text-dark text-sm">{item.label}</p>
                       <p className="text-muted text-sm mt-0.5">{item.value}</p>
@@ -99,7 +133,9 @@ export default function ContactPage() {
       {/* Map embed placeholder */}
       <div className="h-72 bg-navy-light flex items-center justify-center">
         <div className="text-center">
-          <div className="text-4xl mb-3">📍</div>
+          <div className="mb-3 flex justify-center text-orange">
+            <ContactInfoIcon type="address" />
+          </div>
           <p className="font-bold text-navy">Club Rafiki — Nyamirambo, Kigali</p>
           <a
             href="https://maps.app.goo.gl/U4KTiGu9pUU9ihBG7"
