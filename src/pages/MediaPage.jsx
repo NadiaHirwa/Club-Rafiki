@@ -2,6 +2,108 @@ import { useState } from 'react'
 import PageBanner from '../components/PageBanner'
 import { newsItems, progressReports, rafikiBooksJournals, strategicPlan } from '../data/mediaData'
 
+function SectionIcon({ id }) {
+  if (id === 'reports') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+        <line x1="6" y1="20" x2="6" y2="10" />
+        <line x1="12" y1="20" x2="12" y2="6" />
+        <line x1="18" y1="20" x2="18" y2="13" />
+      </svg>
+    )
+  }
+  if (id === 'books') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+        <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+        <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
+      </svg>
+    )
+  }
+  if (id === 'journals') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <line x1="7" y1="8" x2="17" y2="8" />
+        <line x1="7" y1="12" x2="17" y2="12" />
+      </svg>
+    )
+  }
+  if (id === 'strategic') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="12" cy="12" r="1" className="fill-current" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9 12h6" />
+      <path d="M12 9v6" />
+    </svg>
+  )
+}
+
+function MainTabIcon({ id }) {
+  if (id === 'news') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <line x1="7" y1="8" x2="17" y2="8" />
+        <line x1="7" y1="12" x2="17" y2="12" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" className="w-4 h-4 stroke-current fill-none stroke-2" aria-hidden="true">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+    </svg>
+  )
+}
+
+function ResourceIcon({ type }) {
+  if (type === 'book-open') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+        <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+        <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
+      </svg>
+    )
+  }
+  if (type === 'library') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+        <path d="M3 10h18" />
+        <path d="M4 10v8" />
+        <path d="M9 10v8" />
+        <path d="M15 10v8" />
+        <path d="M20 10v8" />
+        <path d="M2 18h20" />
+        <path d="M12 3l10 5H2z" />
+      </svg>
+    )
+  }
+  if (type === 'monitor') {
+    return (
+      <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8" />
+        <path d="M12 16v4" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" className="w-6 h-6 stroke-current fill-none stroke-2" aria-hidden="true">
+      <path d="M2 5a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v16a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3z" />
+      <path d="M22 5a3 3 0 0 0-3-3h-6a3 3 0 0 0-3 3" />
+    </svg>
+  )
+}
+
 // ── Shared PDF download card ──────────────────────────────────────────────────
 function PubCard({ img, title, desc, year, url, wide = false }) {
   return (
@@ -82,11 +184,11 @@ function PublicationsTab() {
   const [section, setSection] = useState('reports')
 
   const sections = [
-    { id: 'reports', label: '📊 Progress Reports' },
-    { id: 'books', label: '📚 RAFIKI Books' },
-    { id: 'journals', label: '📰 RAFIKI Journals' },
-    { id: 'strategic', label: '🎯 Strategic Plan' },
-    { id: 'ebooks', label: '🌐 E-Books & Links' },
+    { id: 'reports', label: 'Progress Reports' },
+    { id: 'books', label: 'RAFIKI Books' },
+    { id: 'journals', label: 'RAFIKI Journals' },
+    { id: 'strategic', label: 'Strategic Plan' },
+    { id: 'ebooks', label: 'E-Books & Links' },
   ]
 
   return (
@@ -103,7 +205,10 @@ function PublicationsTab() {
                 : 'bg-white text-muted border-border hover:border-navy hover:text-navy'
             }`}
           >
-            {s.label}
+            <span className="inline-flex items-center gap-1.5">
+              <SectionIcon id={s.id} />
+              {s.label}
+            </span>
           </button>
         ))}
       </div>
@@ -223,7 +328,7 @@ function PublicationsTab() {
                 rel="noreferrer"
                 className="bg-white rounded-2xl p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.10)] transition-all flex items-start gap-3 group"
               >
-                <span className="text-2xl flex-shrink-0">{e.icon}</span>
+                <span className="text-orange flex-shrink-0"><ResourceIcon type={e.icon} /></span>
                 <div>
                   <p className="text-sm font-bold text-dark leading-snug group-hover:text-orange transition-colors">{e.title}</p>
                   <p className="text-xs text-muted mt-1 flex items-center gap-1">
@@ -256,8 +361,8 @@ export default function MediaPage() {
           {/* Main Tab Switch */}
           <div className="flex gap-3 mb-12 bg-white rounded-2xl p-2 shadow-[0_2px_12px_rgba(0,0,0,0.06)] w-fit mx-auto">
             {[
-              { id: 'news', label: '📰 News & Events' },
-              { id: 'publications', label: '📂 Publications' },
+              { id: 'news', label: 'News & Events' },
+              { id: 'publications', label: 'Publications' },
             ].map(tab => (
               <button
                 key={tab.id}
@@ -268,7 +373,10 @@ export default function MediaPage() {
                     : 'bg-transparent text-muted hover:text-navy'
                 }`}
               >
-                {tab.label}
+                <span className="inline-flex items-center gap-1.5">
+                  <MainTabIcon id={tab.id} />
+                  {tab.label}
+                </span>
               </button>
             ))}
           </div>
