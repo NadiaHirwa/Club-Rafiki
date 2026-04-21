@@ -57,7 +57,7 @@ export default function Footer({ navigate }) {
           <div>
             <h4 className="font-bold text-sm tracking-wider uppercase mb-4 text-white/80">Quick Links</h4>
             <ul className="space-y-2">
-              {[['about','About Us'],['programs','Our Programs'],['news','News & Events'],['impact','Our Impact'],['gallery','Gallery']].map(([page, label]) => (
+              {[['about','About Us'],['programs','Our Programs'],['media','News & Media'],['impact','Our Impact'],['gallery','Gallery']].map(([page, label]) => (
                 <li key={page}>
                   <button onClick={() => navigate(page)} className="text-white/55 hover:text-orange text-sm transition-colors bg-transparent border-0 cursor-pointer p-0">
                     {label}

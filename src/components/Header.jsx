@@ -4,7 +4,7 @@ const navLinks = [
   { id: 'home',     label: 'Home' },
   { id: 'about',    label: 'About' },
   { id: 'programs', label: 'Programs' },
-  { id: 'news',     label: 'News' },
+  { id: 'media',    label: 'Media' },
   { id: 'impact',   label: 'Impact' },
   { id: 'gallery',  label: 'Gallery' },
   { id: 'contact',  label: 'Contact' },
@@ -34,11 +34,11 @@ export default function Header({ currentPage, navigate }) {
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-3.5">
         {/* Logo */}
         <button onClick={() => go('home')} className="flex items-center gap-2.5 font-display font-black text-xl text-navy cursor-pointer bg-transparent border-0">
-          <img
-            src="/assets/Massai-Ujiri.jpg"
-            alt="Club Rafiki logo"
-            className="w-10 h-10 rounded-xl object-cover"
-          />
+          <div className="w-10 h-10 bg-orange rounded-xl grid place-items-center">
+            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
           Club Rafiki
         </button>
 
