@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { useToast } from '../context/ToastContext'
+import { useFormModal } from './VolunteerPartnerModals'
 
 export default function Footer({ navigate }) {
   const [email, setEmail] = useState('')
   const showToast = useToast()
+  const { openVolunteer, openPartner, ModalComponent } = useFormModal()
 
   const handleSubscribe = () => {
     if (email) {
-      showToast('Thank you for subscribing!')
+      showToast('Thank you for subscribing! 🎉')
       setEmail('')
     }
   }
@@ -19,11 +21,11 @@ export default function Footer({ navigate }) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 font-display font-black text-xl text-white mb-4">
-              <img
-                src="/assets/logo.jpeg"
-                alt="Club Rafiki logo"
-                className="w-12 h-12 rounded-xl object-cover border border-white/15"
-              />
+              <div className="w-10 h-10 bg-orange rounded-xl grid place-items-center">
+                <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
               Club Rafiki
             </div>
             <p className="text-white/55 text-sm leading-relaxed mb-5">
@@ -71,13 +73,15 @@ export default function Footer({ navigate }) {
           <div>
             <h4 className="font-bold text-sm tracking-wider uppercase mb-4 text-white/80">Get Involved</h4>
             <ul className="space-y-2">
-              {[['donate','Donate'],['contact','Volunteer'],['contact','Partner With Us']].map(([page, label], i) => (
-                <li key={i}>
-                  <button onClick={() => navigate(page)} className="text-white/55 hover:text-orange text-sm transition-colors bg-transparent border-0 cursor-pointer p-0">
-                    {label}
-                  </button>
-                </li>
-              ))}
+              <li>
+                <button onClick={() => navigate('donate')} className="text-white/55 hover:text-orange text-sm transition-colors bg-transparent border-0 cursor-pointer p-0">Donate</button>
+              </li>
+              <li>
+                <button onClick={openVolunteer} className="text-white/55 hover:text-orange text-sm transition-colors bg-transparent border-0 cursor-pointer p-0">Volunteer</button>
+              </li>
+              <li>
+                <button onClick={openPartner} className="text-white/55 hover:text-orange text-sm transition-colors bg-transparent border-0 cursor-pointer p-0">Partner With Us</button>
+              </li>
               <li><a href="https://www.flickr.com/photos/101217036@N07/albums" target="_blank" rel="noreferrer" className="text-white/55 hover:text-orange text-sm transition-colors">Flickr Channel</a></li>
               <li><a href="https://www.youtube.com/channel/UC-cGA35029h5G32s2aV2Y3g" target="_blank" rel="noreferrer" className="text-white/55 hover:text-orange text-sm transition-colors">YouTube Channel</a></li>
             </ul>
@@ -99,34 +103,17 @@ export default function Footer({ navigate }) {
                 Go
               </button>
             </div>
-            <p className="text-white/40 text-xs mt-3 flex items-center gap-1.5">
-              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              KN 2 AV 266, Nyamirambo, Kigali
-            </p>
-            <p className="text-white/40 text-xs mt-1 flex items-center gap-1.5">
-              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 stroke-current fill-none stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              Mon-Sat: 09:00 AM - 7:00 PM
-            </p>
+            <p className="text-white/40 text-xs mt-3">📍 KN 2 AV 266, Nyamirambo, Kigali</p>
+            <p className="text-white/40 text-xs mt-1">⏰ Mon–Sat: 09:00 AM – 7:00 PM</p>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-sm">
           <p>© 2025 Club Rafiki Youth Empowerment Center. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Made with
-            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current text-orange" aria-hidden="true">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-            for the youth of Rwanda
-          </p>
+          <p>Made with ❤️ for the youth of Rwanda</p>
         </div>
       </div>
+      {ModalComponent}
     </footer>
   )
 }
