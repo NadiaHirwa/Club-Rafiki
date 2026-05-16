@@ -171,16 +171,16 @@ export const impactStats = [
 ]
 
 export const partners = [
-  { img: 'https://www.moya.gov.rw/wp-content/uploads/2021/01/logo.png', name: 'Ministry of Youth and Arts', url: 'https://www.moya.gov.rw/' },
-  { img: '/assets/logo.jpeg', name: 'City of Kigali', url: 'https://www.kigalicity.gov.rw/' },
-  { img: '/assets/logo.jpeg', name: 'National Youth Council', url: 'https://www.nyc.gov.rw/' },
-  { img: 'https://www.giantsofafrica.org/wp-content/uploads/2022/07/GOA-Logo-B-1-1.png', name: 'Giants of Africa', url: 'https://giantsofafrica.org/' },
-  { img: 'https://www.inezafoundation.org/wp-content/uploads/2019/06/ineza-logo.png', name: 'Ineza Foundation', url: 'https://www.inezafoundation.org/' },
-  { img: '/assets/logo.jpeg', name: 'Indigo Foundation', url: 'https://indigofoundation.org/' },
-  { img: 'https://www.imbutofoundation.org/fileadmin/templates/master/assets/images/logo_imbuto.png', name: 'Imbuto Foundation', url: 'https://imbutofoundation.org/' },
-  { img: '/assets/logo.jpeg', name: 'Rafikikidsa', url: 'https://rafikids-basketball.be/' },
-  { img: 'https://www.koica.go.kr/resource/images/koica_logo_en.png', name: 'KOICA', url: 'https://www.koica.go.kr/sites/rwa_en/index.do' },
-  { img: '/assets/logo.jpeg', name: 'Rwanda Governance Board (RBC)', url: 'https://www.rbc.gov.rw/' },
+  { img: '/assets/Minstry of youth and arts.svg', name: 'Ministry of Youth and Arts', url: 'https://www.moya.gov.rw/' },
+  { img: '/assets/City of Kigali.jpg', name: 'City of Kigali', url: 'https://www.kigalicity.gov.rw/' },
+  { img: '/assets/National Youth Council.png', name: 'National Youth Council', url: 'https://www.nyc.gov.rw/' },
+  { img: '/assets/Giants of Africa.png', name: 'Giants of Africa', url: 'https://giantsofafrica.org/' },
+  { img: '/assets/Ineza foundation.jpg', name: 'Ineza Foundation', url: 'https://www.inezafoundation.org/' },
+  { img: '/assets/indigo-foundation.png', name: 'Indigo Foundation', url: 'https://indigofoundation.org/' },
+  { img: '/assets/Imbuto foundation.png', name: 'Imbuto Foundation', url: 'https://imbutofoundation.org/' },
+  { img: '/assets/Rafikikidsa.png', name: 'Rafikikidsa', url: 'https://rafikids-basketball.be/' },
+  { img: '/assets/KOICA.jpg', name: 'KOICA', url: 'https://www.koica.go.kr/sites/rwa_en/index.do' },
+  { img: '/assets/RBC logo.png', name: 'Rwanda Governance Board (RBC)', url: 'https://www.rbc.gov.rw/' },
 ]
 
 export const galleryImages = [
