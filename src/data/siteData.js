@@ -131,19 +131,19 @@ export const programs = [
 
 export const testimonials = [
   {
-    img: 'https://picsum.photos/150/150?image=1005',
+    img: '/assets/PK.jpg',
     quote: 'Young people of Africa have a lot of talent that may not come out without the kind of opportunities provided by such projects.',
     name: 'H.E Paul Kagame',
     title: 'President of the Republic of Rwanda',
   },
   {
-    img: 'https://picsum.photos/150/150?image=1027',
+    img: '/assets/Massai-Ujiri.jpg',
     quote: 'Rafiki is my home. We must continue to DREAM BIG even in hard times. Blessings from Giants of Africa — we think of you always.',
     name: 'Masai Ujiri',
     title: 'President, Toronto Raptors & Giants of Africa',
   },
   {
-    img: 'https://picsum.photos/150/150?image=1012',
+    img: '/assets/Christian-Inwali.jpg',
     quote: 'Club Rafiki helped many of us. After school and during holidays we had a place to play games that open the mind and learn together as a community.',
     name: 'Christian INTWALI',
     title: 'Founder, Our Past Initiative',
