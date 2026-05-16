@@ -28,7 +28,7 @@ export default function GalleryPage() {
 
           <div className="mt-10 text-center">
             <a
-              href="https://www.flickr.com/photos/101217036@N07/albums"
+              href="https://flickr.com/photos/194412004@N05/"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 bg-orange text-white rounded-full px-7 py-3.5 font-bold hover:bg-orange-dark transition-colors"

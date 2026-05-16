@@ -184,16 +184,16 @@ export const partners = [
 ]
 
 export const galleryImages = [
-  'https://i.ibb.co/RTggy2pK/dsc-7517-scaled.jpg',
-  'https://i.ibb.co/35x8RJ9W/52112159933-8dee1762f0-c.jpg',
-  'https://i.ibb.co/CKBGq1mr/cropped-dsc-08142.jpg',
-  'https://i.ibb.co/HpYNKtq4/Semester-report-2024-photo.png',
-  'https://i.ibb.co/ccb1JwML/Health-pictures.png',
-  'https://i.ibb.co/PsjqzjV4/Music-2-1.png',
-  'https://picsum.photos/600/400?image=1031',
-  'https://picsum.photos/600/400?image=1040',
-  'https://picsum.photos/600/400?image=1042',
-  'https://picsum.photos/600/400?image=1043',
-  'https://picsum.photos/600/400?image=1044',
-  'https://picsum.photos/600/400?image=1047',
+  'https://live.staticflickr.com/65535/54686457129_fbb8f028a2_n.jpg',
+  'https://live.staticflickr.com/65535/54686439848_0d2ace4661.jpg',
+  'https://live.staticflickr.com/65535/54686439793_4359b82ccd.jpg',
+  'https://live.staticflickr.com/65535/54686447569_93de21027d_n.jpg',
+  'https://live.staticflickr.com/65535/54686540075_47c803c5ec.jpg',
+  'https://live.staticflickr.com/65535/54686208721_9dd0132b96_z.jpg',
+  'https://live.staticflickr.com/65535/54686208726_e869abaf43_z.jpg',
+  'https://live.staticflickr.com/65535/54686540005_a124f4641a_z.jpg',
+  'https://live.staticflickr.com/65535/54686208661_e84558523c_z.jpg',
+  'https://live.staticflickr.com/65535/54685386352_61d15c8013_z.jpg',
+  'https://live.staticflickr.com/65535/54685386307_d232e97183_z.jpg',
+  'https://live.staticflickr.com/65535/54686447209_7a27a6f27b_w.jpg',
 ]
