@@ -171,12 +171,16 @@ export const impactStats = [
 ]
 
 export const partners = [
-  { img: 'https://www.giantsofafrica.org/wp-content/uploads/2022/07/GOA-Logo-B-1-1.png', name: 'Giants of Africa' },
-  { img: 'https://www.imbutofoundation.org/fileadmin/templates/master/assets/images/logo_imbuto.png', name: 'Imbuto Foundation' },
-  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Goethe-Institut_Logo.svg/2560px-Goethe-Institut_Logo.svg.png', name: 'Goethe-Institut' },
-  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Rotary_International_Logo.svg/1200px-Rotary_International_Logo.svg.png', name: 'Rotary International' },
-  { img: 'https://www.ericsson.com/49dcc5/assets/global/qbank/2021/03/12/ericsson-logo-primary-rgb.svg', name: 'Ericsson' },
-  { img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_the_Netherlands.svg/900px-Flag_of_the_Netherlands.svg.png', name: 'Embassy of Netherlands' },
+  { img: 'https://www.moya.gov.rw/wp-content/uploads/2021/01/logo.png', name: 'Ministry of Youth and Arts', url: 'https://www.moya.gov.rw/' },
+  { img: '/assets/logo.jpeg', name: 'City of Kigali', url: 'https://www.kigalicity.gov.rw/' },
+  { img: '/assets/logo.jpeg', name: 'National Youth Council', url: 'https://www.nyc.gov.rw/' },
+  { img: 'https://www.giantsofafrica.org/wp-content/uploads/2022/07/GOA-Logo-B-1-1.png', name: 'Giants of Africa', url: 'https://giantsofafrica.org/' },
+  { img: 'https://www.inezafoundation.org/wp-content/uploads/2019/06/ineza-logo.png', name: 'Ineza Foundation', url: 'https://www.inezafoundation.org/' },
+  { img: '/assets/logo.jpeg', name: 'Indigo Foundation', url: 'https://indigofoundation.org/' },
+  { img: 'https://www.imbutofoundation.org/fileadmin/templates/master/assets/images/logo_imbuto.png', name: 'Imbuto Foundation', url: 'https://imbutofoundation.org/' },
+  { img: '/assets/logo.jpeg', name: 'Rafikikidsa', url: 'https://rafikids-basketball.be/' },
+  { img: 'https://www.koica.go.kr/resource/images/koica_logo_en.png', name: 'KOICA', url: 'https://www.koica.go.kr/sites/rwa_en/index.do' },
+  { img: '/assets/logo.jpeg', name: 'Rwanda Governance Board (RBC)', url: 'https://www.rbc.gov.rw/' },
 ]
 
 export const galleryImages = [

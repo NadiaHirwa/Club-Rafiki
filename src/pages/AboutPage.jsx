@@ -82,7 +82,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <img src="https://picsum.photos/800/600?image=1015" alt="Youth at Club Rafiki" className="rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]" />
+            <img src="https://i0.wp.com/clubrafiki.com/wp-content/uploads/2023/08/54697022511_d738c63433_c.jpg?strip=info&w=675&ssl=1" alt="Youth at Club Rafiki" className="rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)]" />
             <div>
               <h2 className="font-display text-3xl text-dark mb-5">Our Story</h2>
               <p className="text-muted leading-loose mb-4">Our journey began in <strong className="text-dark">1974</strong>, founded by the Congregation of Dominican Fathers. By 1976, on land granted by the government, we established our core infrastructure — a library, a main hall, and basketball and volleyball courts.</p>
@@ -175,10 +175,10 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {partners.map((p, i) => (
-              <div key={i} className="partner-card bg-white rounded-xl py-5 px-3 text-center shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+              <a key={i} href={p.url} target="_blank" rel="noopener noreferrer" className="partner-card bg-white rounded-xl py-5 px-3 text-center shadow-[0_2px_12px_rgba(0,0,0,0.06)] inline-block">
                 <img src={p.img} alt={p.name} className="h-12 object-contain mx-auto mb-2" />
                 <p className="text-xs font-semibold text-muted">{p.name}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
